@@ -1,0 +1,75 @@
+﻿@{ ViewBag.Title = "Index";}
+<h2>Casa de Conversões - Pedro Santos</h2>
+
+@{
+    var dia = DateTime.Now.DayOfWeek;
+    var hora = DateTime.Now;
+    var mensagem_completa = "";
+    var dia_semana = "";
+}
+@{
+    if (dia.ToString() == "Monday")
+    {
+        dia_semana = "Segunda-Feira";
+        mensagem_completa = "Hoje é " + hora + " de uma " + dia_semana;
+
+        <p>@mensagem_completa!</p>
+    }
+    if (dia.ToString() == "Tuesday")
+    {
+        dia_semana = "Teça-Feira";
+        mensagem_completa = "Hoje é " + hora + " de uma " + dia_semana;
+
+        <p>@mensagem_completa!</p>
+    }
+    if (dia.ToString() == "Wednesday")
+    {
+        dia_semana = "Quarta-Feira";
+        mensagem_completa = "Hoje é " + hora + " de uma " + dia_semana;
+
+        <p>@mensagem_completa!</p>
+    }
+    if (dia.ToString() == "Thursday")
+    {
+        dia_semana = "Quarta-Feira";
+        mensagem_completa = "Hoje é " + hora + " de uma " + dia_semana;
+
+        <p>@mensagem_completa!</p>
+    }
+    if (dia.ToString() == "Fryday")
+    {
+        dia_semana = "Quinta-Feira";
+        mensagem_completa = "Hoje é " + hora + " de uma " + dia_semana;
+
+        <p>@mensagem_completa!</p>
+    }
+    if (dia.ToString() == "Saturday")
+    {
+        dia_semana = "Sabado";
+        mensagem_completa = "Hoje é " + hora + " de uma " + dia_semana;
+
+        <p>@mensagem_completa!</p>
+    }
+
+    if (dia.ToString() == "Sunday")
+    {
+        dia_semana = "Domingo";
+        mensagem_completa = "Hoje é " + hora + " de um " + dia_semana;
+
+        <p><i class="fa fa-clock" aria-hidden="true"></i>  @mensagem_completa!</p>
+    }
+}
+
+
+
+<br />
+@Html.ActionLink("Casa de Cambio", "Cambio", null,
+ new { @style = "color:White; padding:15px;  background-color:slateblue;" })
+
+@Html.ActionLink("Medidas", "Medidas", null,
+ new { @style = "color:White; padding:15px;  background-color:slateblue;" })
+
+@Html.ActionLink("Temperatura", "Temperatura", null,
+ new { @style = "color:White; padding:15px;  background-color:slateblue;" })
+
+

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Medidas";
+
+<div>
+    <h4>Conversão de Temperatura </h4>
+
+    <form action="" method="POST" class="form-inline">
+
+        <label for="Temperatura"> ºC - Celsius: </label>
+        <input type="text" name="Temperatura" class="form-control" />
+
+        <br />
+
+        <label for="Escala"> Converter Para:</label>
+        <select class="form-control" name="Escala">
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        <br />  
+        <input type="submit" value="Converter" />
+    </form>
+
+    <hr />
+
+    @{
+        if (IsPost)
+        {
+            decimal temperatura, resultado;
+            string esc;
+            if (Request.Form["Escala"] == "Fahrenheit")
+            {
+                temperatura = Request.Form["Temperatura"].AsDecimal();
+                esc = Request.Form["Escala"];
+                resultado = ((temperatura * 9 / 5m) + 32);
+                <h3>  Fahrenheit  </h3>
+                <text>
+                    <b>Temperatura em Graus Celcius: @temperatura</b><br />
+                    <b>Temperatura em @esc: @resultado.ToString("N2") </b><br />
+                </text>
+            }
+            if (Request.Form["Escala"] == "Kelvin")
+            {
+                temperatura = Request.Form["Temperatura"].AsDecimal();
+                esc = Request.Form["Escala"];
+                resultado = (temperatura * 273.15m);
+                <h3>  Kelvin  </h3>
+                <text>
+                    <b>Temperatura em Graus Celcius: @temperatura</b><br />
+                    <b>Temperatura em @esc: @resultado </b><br />
+                </text>
+            }
+        }
+
+
+
+    }
+</div>
+<br />
+@Html.ActionLink("Voltar", "Index", null,
+ new { @style = "color:White; padding:15px;  background-color:slateblue;" })

@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Cambio";
+}
+
+<h2>Cambio</h2>
+
+<div class="currency">
+    <h4>Conversão Moedas </h4>
+
+    <form action="" method="POST" class="form-inline">
+
+        <i class="fas fa-dollar-sign"></i><input type="text" name="Valor" placeholder="Valor em Reais (R$)" />    </>
+        <br />
+        <label for="Moeda"> Escolha qual a Moeda: </label>
+        <select name="Moeda">
+            <option value="Dolar">Dolar</option>
+            <option value="Euro">Euro</option>
+            <option value="Peso">Peso</option>
+            <option value="Bitcoin">Bitcoin</option>
+        </select>
+        <br />
+        <label for="Delta"> Qual o Valor da Moeda:</label><input type="text" name="Delta" />
+
+        <br />
+
+        <input class="Converte" type="submit" value="Conversão" />
+
+    </form>
+    <hr />
+
+
+
+    @{
+        if (IsPost)
+        {
+
+            if (Request.Form["Moeda"] == "Dolar")
+            {
+                decimal valorReal = Request.Form["Valor"].AsDecimal();
+                string moeda = Request.Form["Moeda"];
+                decimal delta = 1;
+
+                delta = Request.Form["Delta"].AsDecimal();
+
+                decimal resultado = valorReal / delta;
+                <h4 style="font-size:20px">Conversão para Dolar </h4>
+
+                <div class="container-fluid">
+                    <text>
+                        <strong>
+                            Valor em R$: @valorReal
+                            <br />
+                            Moeda Selecionada: @moeda
+                            <br />
+                            Valor Convertido: @resultado.ToString("N2")
+                        </strong>
+                    </text>
+
+                </div>
+
+            }
+            if (Request.Form["Moeda"] == "Euro")
+            {
+                decimal valorReal = Request.Form["Valor"].AsDecimal();
+                string moeda = Request.Form["Moeda"];
+                decimal delta = 1;
+                delta = Request.Form["Delta"].AsDecimal();
+
+                decimal resultado = valorReal / delta;
+
+                <div class="container-fluid">
+                    <h3>Conversao para Euro</h3>
+
+                    <text>
+                        <strong>
+                            Valor em R$: @valorReal
+                            <br />
+                            Moeda Selecionada: @moeda
+                            <br />
+                            Valor Convertido: @resultado.ToString("N2")
+                        </strong>
+                    </text>
+
+                </div>
+            }
+            if (Request.Form["Moeda"] == "Peso")
+            {
+                decimal valorReal = Request.Form["Valor"].AsDecimal();
+                string moeda = Request.Form["Moeda"];
+                decimal delta = 1;
+                delta = Request.Form["Delta"].AsDecimal();
+
+                decimal resultado = valorReal / delta;
+                <div class="container-fluid">
+                    <h5>Conversao para Peso</h5>
+
+                    <text>
+                        <strong>
+                            Valor em R$: @valorReal
+                            <br />
+                            Moeda Selecionada: @moeda
+                            <br />
+                            Valor Convertido: @resultado
+                        </strong>
+                    </text>
+                </div>
+
+            }
+            if (Request.Form["Moeda"] == "Bitcoin")
+            {
+                decimal valorReal = Request.Form["Valor"].AsDecimal();
+                string moeda = Request.Form["Moeda"];
+                decimal delta = 1;
+                delta = Request.Form["Delta"].AsDecimal();
+
+                decimal resultado = valorReal / delta;
+
+
+                <div class="container-fluid">
+                    <h5>Conversao para Bitcoin</h5>
+
+                    <text>
+                        <strong>
+                            Valor em R$: @valorReal
+                            <br />
+                            Moeda Selecionada: @moeda
+                            <br />
+                            Valor Convertido: @resultado
+                        </strong>
+                    </text>
+                </div>
+
+            }
+        }
+
+    }
+
+</div>
+@Html.ActionLink("Voltar", "Index", null,
+ new { @style = "color:White; padding:15px;  background-color:slateblue;" })

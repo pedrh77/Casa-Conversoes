@@ -1,0 +1,60 @@
+﻿body {
+    padding: 0px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+h2, p {
+    margin: 0px, 30px;
+}
+
+.currency {
+    margin: 30px;
+    border: solid 1px #000000;
+    border-radius: 20px;
+    align-items: center;
+    padding: 25px 30px;
+}
+
+h4 {
+    margin: 10px 30px 20px 30px;
+}
+
+input {
+    margin: 0px 30px 20px 12px;
+    width: 180px;
+}
+
+    input[name=Delta] {
+        margin: 20px 30px;
+    }
+
+    input[type=submit] {
+        margin: 30px 30px 20px 12px;
+        font-weight: 600;
+        width: 180px;
+        height: 30px;
+        border-radius: 7px;
+        background-color: #4cff00;
+        border: none;
+    }
+
+
+
+label {
+font-weight:600;
+}

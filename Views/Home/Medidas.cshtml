@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Medidas";
+}
+
+<h2>Medidas</h2>
+<div>
+    <h4>Conversão de Medidas </h4>
+
+    <form action="" method="POST" class="form-inline">
+
+        <label for="Comprimento"> Comprimento: (Centimetros): </label>
+        <input type="text" name="Comprimento" class="form-control" />
+
+        <br />
+
+        <label for="Escala"> Converter Para: </label>
+        <select class="form-control" name="Escala">
+            <option value="Metros">Metros</option>
+            <option value="Quilometros">Quilometros</option>
+            <option value="Milimetro">Milimetro</option>
+            <option value="Polegada">Polegada</option>
+
+        </select>
+        <br />
+
+        <input type="submit" value="Converter" />
+    </form>
+
+    <hr />
+    @{ if (IsPost)
+        {
+
+            decimal comprimento, resultado;
+            string esc;
+            if (Request.Form["Escala"] == "Metros")
+            {
+                comprimento = Request.Form["Comprimento"].AsDecimal();
+                esc = Request.Form["Escala"];
+                resultado = comprimento / 100m;
+                <h3>Metros</h3>
+                <text><strong>
+                        Comprimento em Centimetros: @comprimento <br />
+                        Comprimento em @esc: @resultado <br />
+                    </strong>
+                </text>
+            }
+            if (Request.Form["Escala"] == "Quilometros")
+            {
+                comprimento = Request.Form["Comprimento"].AsDecimal();
+                esc = Request.Form["Escala"];
+                resultado = comprimento / 100000m;
+                <h3>Quilometros</h3>
+                <text>
+                    <strong>
+                        Comprimento em Centimetros: @comprimento <br />
+                        Comprimento em @esc: @resultado <br />
+                    </strong>
+                </text>
+            }
+            if (Request.Form["Escala"] == "Milimetro")
+            {
+                comprimento = Request.Form["Comprimento"].AsDecimal();
+                esc = Request.Form["Escala"];
+                resultado = comprimento * 10m;
+                <h3>Milimetros</h3>
+                <text>
+                    <strong>
+                        Comprimento em Centimetros: @comprimento <br />
+                        Comprimento em @esc: @resultado <br />
+                    </strong>
+                </text>
+            }
+            if (Request.Form["Escala"] == "Polegada")
+            {
+                comprimento = Request.Form["Comprimento"].AsDecimal();
+                esc = Request.Form["Escala"];
+                resultado = (comprimento / 2.54m);
+                <h3>Polegada</h3>
+                <text>
+                    <strong>
+                        Comprimento em Centimetros: @comprimento <br />
+                        Comprimento em @esc: @resultado.ToString("N2") <br />
+                    </strong>
+                </text>
+            }
+
+        }
+
+    }
+
+
+
+
