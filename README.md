@@ -3,12 +3,13 @@
 ### Projeto simples utilizando Asp.net Framework com ajuda do Razor
 <h2> O sistema tem 3 Funções:</h2>
  
- * Converaão de Moedas
+ * Converão de Moedas
  * Conversão de Medidas
  * Conversão de Temperaturas
 
 
 ---
+
 <h1>Conversão de Moedas</h1>
 <img src="https://user-images.githubusercontent.com/66256107/147893878-1dc840c8-7dbb-4193-ab32-42a420b3f39b.png" width="450em">
 
